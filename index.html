@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missão AURA // 2089</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="container" id="app-container">
+
+        <!-- TELA INICIAL -->
+        <section id="tela-formulario">
+            <header class="cabecalho">
+                <p class="codigo">SISTEMA AURA // ANO 2089</p>
+                <h1>Missão <span>AURA</span></h1>
+                <p class="subtitulo">
+                    Descubra seu papel na exploração de um planeta desconhecido.
+                </p>
+            </header>
+
+            <form id="quiz-form">
+                <div class="dados">
+                    <div class="campo">
+                        <label for="nome">Nome ou apelido</label>
+                        <input type="text" id="nome" required
+                               placeholder="Digite seu nome...">
+                    </div>
+
+                    <div class="campo">
+                        <label for="nascimento">Data de nascimento</label>
+                        <input type="date" id="nascimento" required>
+                    </div>
+                </div>
+
+                <p class="instrucao">QUESTIONÁRIO DE DESIGNAÇÃO</p>
+
+                <fieldset class="pergunta">
+                    <legend>01. A nave dispara um alarme de perigo. O que você faz primeiro?</legend>
+                    <label><input type="radio" name="p1" value="comandante" required> Organizo o pessoal e decido o que cada um deve fazer.</label>
+                    <label><input type="radio" name="p1" value="engenheiro"> Verifico os computadores e sistemas para achar o erro.</label>
+                    <label><input type="radio" name="p1" value="astrobiologo"> Vejo se todo mundo está bem e se alguém se machucou.</label>
+                    <label><input type="radio" name="p1" value="reconhecimento"> Procuro uma rota de fuga rápida.</label>
+                </fieldset>
+
+                <fieldset class="pergunta">
+                    <legend>02. Vocês acabaram de pousar em um planeta novo. Qual é sua primeira atitude?</legend>
+                    <label><input type="radio" name="p2" value="comandante" required> Organizo a equipe e divido as tarefas.</label>
+                    <label><input type="radio" name="p2" value="engenheiro"> Ligo os aparelhos e antenas para monitorar o ambiente.</label>
+                    <label><input type="radio" name="p2" value="astrobiologo"> Coleto amostras de plantas e do solo para estudar.</label>
+                    <label><input type="radio" name="p2" value="reconhecimento"> Mapeio o terreno e descubro o que tem por perto.</label>
+                </fieldset>
+
+                <fieldset class="pergunta">
+                    <legend>03. Vocês encontram uma criatura alienígena desconhecida. O que você faz?</legend>
+                    <label><input type="radio" name="p3" value="comandante" required> Avalio o perigo e decido se devemos nos afastar.</label>
+                    <label><input type="radio" name="p3" value="engenheiro"> Uso aparelhos para escanear e registrar os dados.</label>
+                    <label><input type="radio" name="p3" value="astrobiologo"> Tento me aproximar com calma e observar seu comportamento.</label>
+                    <label><input type="radio" name="p3" value="reconhecimento"> Fico alerta, pronto para correr ou improvisar.</label>
+                </fieldset>
+
+                <fieldset class="pergunta">
+                    <legend>04. Os mapas estragaram e os suprimentos estão acabando. Como você resolve isso?</legend>
+                    <label><input type="radio" name="p4" value="comandante" required> Crio um plano de racionamento e converso com o grupo.</label>
+                    <label><input type="radio" name="p4" value="engenheiro"> Tento consertar os navegadores ou recuperar os dados.</label>
+                    <label><input type="radio" name="p4" value="astrobiologo"> Procuro água e alimentos naturais nos arredores.</label>
+                    <label><input type="radio" name="p4" value="reconhecimento"> Sigo pistas e procuro uma rota alternativa.</label>
+                </fieldset>
+
+                <button type="submit" id="btn-enviar">Descobrir meu perfil ↗</button>
+            </form>
+        </section>
+
+        <!-- TELA DE RESULTADO -->
+        <section id="tela-resultado" class="escondido">
+            <header class="resultado-topo">
+                <p class="codigo">AURA // RELATÓRIO DE TRIPULANTE</p>
+                <h2>Resultado da missão</h2>
+                <p>Designação concluída. Confira seu perfil.</p>
+            </header>
+
+            <div class="participante">
+                <span>TRIPULANTE IDENTIFICADO</span>
+                <p><strong id="res-nome"></strong> · <span id="res-idade"></span> anos</p>
+            </div>
+
+            <div class="resultado-grid">
+                <section class="painel-personagem">
+                    <div class="personagem-imagem">
+                        <img id="res-imagem" src="" alt="Imagem do personagem">
+                        <span id="res-icone" class="icone-personagem"></span>
+                    </div>
+                    <p class="codigo" id="res-codigo"></p>
+                    <h3 id="res-titulo"></h3>
+                    <p class="categoria" id="res-categoria"></p>
+                    <p id="res-descricao"></p>
+                    <div class="detalhe">
+                        <strong>PERFIL</strong>
+                        <p id="res-tracos"></p>
+                    </div>
+                    <blockquote id="res-frase"></blockquote>
+                </section>
+
+                <section class="painel-analise">
+                    <h3>Análise de atributos</h3>
+                    <p class="texto-suave">Compatibilidade do seu perfil</p>
+                    <div id="lista-atributos"></div>
+
+                    <div class="detalhe">
+                        <strong>HABILIDADE PRINCIPAL</strong>
+                        <p id="res-habilidade"></p>
+                    </div>
+
+                    <p id="mensagem-confirmacao" class="confirmacao escondido"></p>
+
+                    <div class="botoes">
+                        <button type="button" id="btn-refazer" class="secundario">Refazer teste</button>
+                        <button type="button" id="btn-confirmar">Confirmar perfil</button>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
